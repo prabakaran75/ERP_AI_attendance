@@ -160,6 +160,7 @@ class _AttendanceReportState extends State<AttendanceReport> {
                   .getadaptiveTextSize(context, 25),
               fontWeight: FontWeight.w600),),
         centerTitle: true,
+        iconTheme: IconThemeData(color: Colors.white),
       ),
       body: ListView(
         shrinkWrap: true,

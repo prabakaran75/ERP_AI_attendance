@@ -19,7 +19,7 @@ class _SignInScreenState extends State<SignInScreen> {
   final TextEditingController password = TextEditingController();
   FocusNode passwordFocusNode = FocusNode();
   FocusNode usernameFocusNode = FocusNode();
-  bool visible = true;
+  bool visible = false;
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
@@ -44,15 +44,16 @@ class _SignInScreenState extends State<SignInScreen> {
                   ),
                   child:  Padding(
                     padding: EdgeInsets.only(
-                        left: width*0.02,
-                        right: width*0.02,
+                        left: width*0.04,
+                        right: width*0.04,
                         bottom: height*0.7
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Hello!\nSign In",
+                          // "Hello!\nSign In",
+                          "Sign In",
                           style: AppStyles.customFontinika(context,
                               color: ColorConstant.whiteColorLight,
                               fontSize: const AdaptiveTextSize()
@@ -116,10 +117,11 @@ class _SignInScreenState extends State<SignInScreen> {
                                     userName.selection = TextSelection.fromPosition(
                                         TextPosition(offset: userName.text.length));
                                   });},
+                                prefixIcon: Icon(Icons.person),
                                 label: "User Name"),
                             SizedBox(height: height * 0.04,),
                             CustomTextFormField(
-                              obsureText: visible,
+                              obsureText: !visible,
                               controller: password,
                               focusNode: passwordFocusNode,
                               onChanged: (value){
@@ -128,6 +130,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                       TextPosition(offset: password.text.length));
                                 });},
                               label: "Password",
+                              prefixIcon: Icon(Icons.lock),
                               suffixIcon: IconButton(
                                 onPressed: (){
                                   setState(() {

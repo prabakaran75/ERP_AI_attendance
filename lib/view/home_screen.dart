@@ -61,7 +61,15 @@ class _HomeScreenState extends State<HomeScreen> {
       }else{
         setState(() {
           scanBarcode = barcodeScanRes;
-          showToast(scanBarcode.toString());
+          if(scanBarcode != null){
+            setState(() {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const AttendanceReport()),
+              );
+            });
+          }
+          // showToast(scanBarcode.toString());
         });
       }
     }on PlatformException{
@@ -97,6 +105,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   .getadaptiveTextSize(context, 25),
               fontWeight: FontWeight.w600),),
         centerTitle: true,
+        iconTheme: IconThemeData(color: Colors.white),
       ),
       body: Form(
         key:  formKey,
@@ -153,7 +162,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       setState(() {
                         period = value.toString();
                       });},),
-                  SizedBox(height: height*0.02,),
+                  SizedBox(height: height*0.03,),
                   CustomDropDownFormField(
                     label: "Select subject",
                     items: subjectList.map((item) =>
@@ -170,9 +179,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       setState(() {
                         subject = value.toString();
                       });},),
-                  SizedBox(height: height*0.02,),
+                  SizedBox(height: height*0.03,),
                   Text(
-                    "Automatic",
+                    "OR",
                     textAlign: TextAlign.center,
                     style: AppStyles.customFontinika(context,
                         color: ColorConstant.primaryColorLight,
@@ -195,12 +204,14 @@ class _HomeScreenState extends State<HomeScreen> {
                       borderRadius: BorderRadius.circular(5),),
                     child: TextButton(
                       onPressed: (){
-                        setState(() {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => const AttendanceReport()),
-                          );
-                        });
+                        if(formKey.currentState!.validate()){
+                          setState(() {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => const AttendanceReport()),
+                            );
+                          });
+                        }
                       },
                       child: Text('Submit',
                         style: AppStyles.customFontinika(context,

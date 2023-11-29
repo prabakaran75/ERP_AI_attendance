@@ -159,7 +159,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                           .getadaptiveTextSize(context, 16),
                                     ),)),
                             ),*/
-                            SizedBox(height: height * 0.035,),
+                            SizedBox(height: height * 0.05,),
                             Container(
                               width: width*1.0,
                               height: height*0.07,
@@ -199,8 +199,11 @@ class _SignInScreenState extends State<SignInScreen> {
                                   SizedBox(height: height * 0.01,),
                                   GestureDetector(
                                     onTap: (){
-                                     *//* Navigator.push(context,
-                                        MaterialPageRoute(builder: (context) => const SignUp()),);*//*
+                                     */
+                            /* Navigator.push(context,
+                                        MaterialPageRoute(builder: (context) => const SignUp()),);
+                                        */
+                            /*
                                     },
                                     child: Text("Sign Up",
                                       style: AppStyles.customFontinika(context,
@@ -221,7 +224,21 @@ class _SignInScreenState extends State<SignInScreen> {
               ),
             ],
           ),
-        )
+        ),
+      bottomSheet: Container(
+        color: Colors.transparent,
+        height: height * 0.04,
+        width: width,
+        child: Center(
+          child: Text("Provided by @Microhard Infotech L.L.C.,",
+            textAlign: TextAlign.center,
+            style: AppStyles.customFontinika(context,
+                color: ColorConstant.primaryColorLight,
+                fontSize: const AdaptiveTextSize()
+                    .getadaptiveTextSize(context, FontConstant.font15),
+                fontWeight: FontWeight.w400),),
+        ),
+      ),
     );
   }
 }

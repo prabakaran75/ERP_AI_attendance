@@ -50,6 +50,8 @@ class _AttendanceReportState extends State<AttendanceReport> {
     _startTimer();
     fetchData();
   }
+
+
   AttendanceReportController attendanceReportController = AttendanceReportController();
   List<AttendanceListModel> studentAbsentList = [];
   List<AttendanceListModel> selectedStudentList = [];
@@ -102,6 +104,13 @@ class _AttendanceReportState extends State<AttendanceReport> {
           .getadaptiveTextSize(context, FontConstant.font15),
       webPosition: "center",
     );
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    _timer.cancel();
   }
   @override
   Widget build(BuildContext context) {

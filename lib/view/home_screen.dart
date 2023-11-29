@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:mhi_ai_attendance/view/signin_screen.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 import '../constants/constants.dart';
@@ -90,6 +91,56 @@ class _HomeScreenState extends State<HomeScreen> {
       webPosition: "center",
     );
   }
+
+  Future<void> showConfirmationDialog() async {
+    return showDialog<void>(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Logout',
+              style: AppStyles.customFontinika(context,
+                  color: ColorConstant.darkColorLight,
+                  fontSize: const AdaptiveTextSize()
+                      .getadaptiveTextSize(context, FontConstant.font20),
+                  fontWeight: FontWeight.w400)),
+          content: Text('Are you sure you want to proceed?',
+              style: AppStyles.customFontinika(context,
+                  color: ColorConstant.darkColorLight,
+                  fontSize: const AdaptiveTextSize()
+                      .getadaptiveTextSize(context, FontConstant.font15),
+                  fontWeight: FontWeight.w400)),
+          actions: <Widget>[
+            TextButton(
+              child: Text('Yes',
+                  style: AppStyles.customFontinika(context,
+                      color: ColorConstant.primaryColorLight,
+                      fontSize: const AdaptiveTextSize()
+                          .getadaptiveTextSize(context, FontConstant.font15),
+                      fontWeight: FontWeight.w400)),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const SignInScreen()),
+                );
+              },
+            ),
+            TextButton(
+              child: Text('No',
+                  style: AppStyles.customFontinika(context,
+                      color: ColorConstant.primaryColorLight,
+                      fontSize: const AdaptiveTextSize()
+                          .getadaptiveTextSize(context, FontConstant.font15),
+                      fontWeight: FontWeight.w400)),
+              onPressed: () {
+                Navigator.of(context).pop(false);
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
@@ -105,7 +156,15 @@ class _HomeScreenState extends State<HomeScreen> {
                   .getadaptiveTextSize(context, 25),
               fontWeight: FontWeight.w600),),
         centerTitle: true,
-        iconTheme: IconThemeData(color: Colors.white),
+        iconTheme: const IconThemeData(color: Colors.white),
+        actions: [
+          IconButton(
+              onPressed: (){
+                showConfirmationDialog();
+              },
+              icon: const Icon(Icons.logout,
+                color: ColorConstant.whiteColor,)),
+        ],
       ),
       body: Form(
         key:  formKey,

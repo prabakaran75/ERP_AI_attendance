@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mhi_ai_attendance/view/signin_screen.dart';
 
 import '../constants/constants.dart';
 import '../constants/entity_factory.dart';
@@ -18,12 +17,12 @@ class _SplashScreenState extends State<SplashScreen> {
     // TODO: implement initState
     super.initState();
     Future.delayed(const Duration(seconds: 5), () {
-      Navigator.pushReplacementNamed(context, "/SignIn");
+      Navigator.pushNamed(context, "/SignIn");
     });
   }
   @override
   Widget build(BuildContext context) {
-    /*  Navigator.push(
+    /*Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => const SignInScreen()),
       );*/

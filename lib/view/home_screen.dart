@@ -2,13 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:mhi_ai_attendance/view/signin_screen.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 import '../constants/constants.dart';
 import '../constants/entity_factory.dart';
 import '../widgets/cutom_textformfield_dropddownfield.dart';
-import 'attendance_report.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -64,10 +62,11 @@ class _HomeScreenState extends State<HomeScreen> {
           scanBarcode = barcodeScanRes;
           if(scanBarcode != null){
             setState(() {
-              Navigator.push(
+              Navigator.pushNamed(context, "/AttendanceReport");
+             /* Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => const AttendanceReport()),
-              );
+              );*/
             });
           }
           // showToast(scanBarcode.toString());
@@ -118,10 +117,11 @@ class _HomeScreenState extends State<HomeScreen> {
                           .getadaptiveTextSize(context, FontConstant.font15),
                       fontWeight: FontWeight.w400)),
               onPressed: () {
-                Navigator.push(
+                Navigator.pushNamed(context, "/SignIn");
+               /* Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const SignInScreen()),
-                );
+                );*/
               },
             ),
             TextButton(
@@ -269,7 +269,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               context,
                               MaterialPageRoute(builder: (context) => const AttendanceReport()),
                             );*/
-                            Navigator.pushReplacementNamed(context, "/AttendanceReport");
+                            Navigator.pushNamed(context, "/AttendanceReport");
                           });
                         }
                       },

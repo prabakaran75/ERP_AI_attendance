@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mhi_ai_attendance/view/splash_screen.dart';
 
 import '../constants/constants.dart';
 import '../constants/entity_factory.dart';
 import '../widgets/cutom_textformfield_dropddownfield.dart';
-import 'home_screen.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
@@ -173,7 +171,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                       context,
                                       MaterialPageRoute(builder: (context) => const HomeScreen()),
                                     );*/
-                                    Navigator.pushReplacementNamed(context, "/Home");
+                                    Navigator.pushNamed(context, "/Home");
                                   });
                                 },
                                 child: Text('Sign In',

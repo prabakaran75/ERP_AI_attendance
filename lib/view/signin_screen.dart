@@ -169,10 +169,11 @@ class _SignInScreenState extends State<SignInScreen> {
                               child: TextButton(
                                 onPressed: (){
                                   setState(() {
-                                    Navigator.push(
+                                  /*  Navigator.push(
                                       context,
                                       MaterialPageRoute(builder: (context) => const HomeScreen()),
-                                    );
+                                    );*/
+                                    Navigator.pushReplacementNamed(context, "/Home");
                                   });
                                 },
                                 child: Text('Sign In',

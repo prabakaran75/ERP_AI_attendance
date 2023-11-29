@@ -12,14 +12,21 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    Future.delayed(const Duration(seconds: 5), () {
+      Navigator.pushReplacementNamed(context, "/SignIn");
+    });
+  }
   @override
   Widget build(BuildContext context) {
-    Future.delayed(const Duration(seconds: 5), () {
-      Navigator.push(
+    /*  Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => const SignInScreen()),
-      );
-    });
+      );*/
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
     return Scaffold(

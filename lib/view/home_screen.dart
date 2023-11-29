@@ -163,7 +163,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 showConfirmationDialog();
               },
               icon: const Icon(Icons.logout,
-                color: ColorConstant.whiteColor,)),
+                color: ColorConstant.whiteColorLight,)),
         ],
       ),
       body: Form(
@@ -265,10 +265,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       onPressed: (){
                         if(formKey.currentState!.validate()){
                           setState(() {
-                            Navigator.push(
+                            /*Navigator.push(
                               context,
                               MaterialPageRoute(builder: (context) => const AttendanceReport()),
-                            );
+                            );*/
+                            Navigator.pushReplacementNamed(context, "/AttendanceReport");
                           });
                         }
                       },

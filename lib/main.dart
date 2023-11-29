@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mhi_ai_attendance/view/attendance_report.dart';
+import 'package:mhi_ai_attendance/view/home_screen.dart';
 import 'package:mhi_ai_attendance/view/signin_screen.dart';
 import 'package:mhi_ai_attendance/view/splash_screen.dart';
 
@@ -16,9 +18,15 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const SplashScreen(),
+        useMaterial3: true,),
+      // home: const SplashScreen(),
+      initialRoute: "/",
+      routes: {
+        "/": (context) =>  SplashScreen(),
+        "/SignIn": (context) =>  SignInScreen(),
+        "/Home": (context) =>  HomeScreen(),
+        "/AttendanceReport": (context) =>  AttendanceReport(),
+      },
     );
   }
 }

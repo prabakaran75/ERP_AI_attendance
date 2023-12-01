@@ -23,6 +23,7 @@ class _SignInScreenState extends State<SignInScreen> {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
     return Scaffold(
+      resizeToAvoidBottomInset: true,
         body: Form(
           key: formKey,
           child: Stack(
@@ -40,48 +41,54 @@ class _SignInScreenState extends State<SignInScreen> {
                           ColorConstant.loginBgLight,
                         ]),*/
                   ),
-                  child:  Padding(
-                    padding: EdgeInsets.only(
-                        left: width*0.04,
-                        right: width*0.04,
-                        bottom: height*0.7
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          // "Hello!\nSign In",
-                          "Sign In",
-                          style: AppStyles.customFontinika(context,
-                              color: ColorConstant.whiteColorLight,
-                              fontSize: const AdaptiveTextSize()
-                                  .getadaptiveTextSize(context, 30),
-                              fontWeight: FontWeight.w600),),
-                        Container(
-                          height: height*0.12,
-                          decoration: BoxDecoration(
-                              color: ColorConstant.transparent,
-                              borderRadius: BorderRadius.circular(10),
-                              /*boxShadow: const [
-                                BoxShadow(
-                                  spreadRadius: 3.5,
-                                  blurRadius: 2,
-                                  color: ColorConstant.whiteColorLight,
-                                )
-                              ]*/
-                          ),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(10),
-                            child: Image.asset(
-                              'assets/images/mhilogo.png',
-                              fit: BoxFit.cover,
-                              // height: height * 0.2,
-                            ),
-                          ),
+                  child:  ListView(
+                    physics: const NeverScrollableScrollPhysics(),
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(
+                            left: width*0.04,
+                            right: width*0.04,
+                            top: height*0.04
+                            // bottom: height*0.4
                         ),
-                      ],
-                    ),
-                  )
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              // "Hello!\nSign In",
+                              "Sign In",
+                              style: AppStyles.customFontinika(context,
+                                  color: ColorConstant.whiteColorLight,
+                                  fontSize: const AdaptiveTextSize()
+                                      .getadaptiveTextSize(context, 30),
+                                  fontWeight: FontWeight.w600),),
+                            Container(
+                              height: height*0.12,
+                              decoration: BoxDecoration(
+                                color: ColorConstant.transparent,
+                                borderRadius: BorderRadius.circular(10),
+                                /*boxShadow: const [
+                                  BoxShadow(
+                                    spreadRadius: 3.5,
+                                    blurRadius: 2,
+                                    color: ColorConstant.whiteColorLight,
+                                  )
+                                ]*/
+                              ),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(10),
+                                child: Image.asset(
+                                  'assets/images/mhilogo.png',
+                                  fit: BoxFit.cover,
+                                  // height: height * 0.2,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
               ),
               Padding(
                 padding: EdgeInsets.only(top: height*0.3),

@@ -41,6 +41,17 @@ class _SignInScreenState extends State<SignInScreen> {
                   fontWeight: FontWeight.w400)),
           actions: <Widget>[
             TextButton(
+              child: Text('No',
+                  style: AppStyles.customFontinika(context,
+                      color: ColorConstant.aicolor,
+                      fontSize: const AdaptiveTextSize()
+                          .getadaptiveTextSize(context, FontConstant.font15),
+                      fontWeight: FontWeight.w400)),
+              onPressed: () {
+                Navigator.of(context).pop(false);
+              },
+            ),
+            TextButton(
               child: Text('Yes',
                   style: AppStyles.customFontinika(context,
                       color: ColorConstant.aicolor,
@@ -51,17 +62,6 @@ class _SignInScreenState extends State<SignInScreen> {
                 // Exit the application
                 // Navigator.of(context).popUntil((route) => route.isFirst);
                 exit(0);
-              },
-            ),
-            TextButton(
-              child: Text('No',
-                  style: AppStyles.customFontinika(context,
-                      color: ColorConstant.aicolor,
-                      fontSize: const AdaptiveTextSize()
-                          .getadaptiveTextSize(context, FontConstant.font15),
-                      fontWeight: FontWeight.w400)),
-              onPressed: () {
-                Navigator.of(context).pop(false);
               },
             ),
           ],
@@ -250,26 +250,30 @@ class _SignInScreenState extends State<SignInScreen> {
                                 ),
                               ),
                               SizedBox(height: height * 0.12,),
-                              Center(
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                  children: [
-                                    Text("Powered by Microhard Infotech L.L.C.,",
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Expanded(
+                                    flex:9,
+                                    child: Text("Powered by Microhard Infotech L.L.C.",
                                       textAlign: TextAlign.center,
                                       style: AppStyles.customFontinika(context,
                                           color: ColorConstant.aicolor,
                                           fontSize: const AdaptiveTextSize()
-                                              .getadaptiveTextSize(context, FontConstant.font16),
+                                              .getadaptiveTextSize(context, FontConstant.font14),
                                           fontWeight: FontWeight.w400),),
-                                    ClipRRect(
+                                  ),
+                                  Expanded(
+                                    flex:1,
+                                    child: ClipRRect(
                                       child: Image.asset(
                                         'assets/images/mhilogo.jpg',
-                                        fit: BoxFit.cover,
-                                        height: height * 0.04,
+                                        // fit: BoxFit.cover,
+                                        height: height * 0.025,
                                       ),
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
                               SizedBox(height: height * 0.01,),
                               /*Align(

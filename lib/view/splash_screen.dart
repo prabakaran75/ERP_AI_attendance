@@ -98,28 +98,53 @@ class _SplashScreenState extends State<SplashScreen> {
         color: ColorConstant.whiteColorLight,
         height: height * 0.04,
         width: width,
-        child: Center(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Text("Powered by Microhard Infotech L.L.C.,",
+        child:  Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Expanded(
+              flex:9,
+              child: Text("Powered by Microhard Infotech L.L.C.",
                 textAlign: TextAlign.center,
                 style: AppStyles.customFontinika(context,
                     color: ColorConstant.aicolor,
                     fontSize: const AdaptiveTextSize()
-                        .getadaptiveTextSize(context, FontConstant.font16),
+                        .getadaptiveTextSize(context, FontConstant.font14),
+                    fontWeight: FontWeight.w400),),
+            ),
+            Expanded(
+              flex:1,
+              child: ClipRRect(
+                child: Image.asset(
+                  'assets/images/mhilogo.jpg',
+                  // fit: BoxFit.cover,
+                  height: height * 0.025,
+                ),
+              ),
+            ),
+          ],
+        ),
+        /*Center(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Text("Powered by Microhard Infotech L.L.C.",
+                textAlign: TextAlign.center,
+                style: AppStyles.customFontinika(context,
+                    color: ColorConstant.aicolor,
+                    fontSize: const AdaptiveTextSize()
+                        .getadaptiveTextSize(context, FontConstant.font14),
                     fontWeight: FontWeight.w400),),
               ClipRRect(
                 // borderRadius: BorderRadius.circular(10),
                 child: Image.asset(
                   'assets/images/mhilogo.jpg',
                   fit: BoxFit.cover,
-                  height: height * 0.04,
+                  height: height * 0.025,
                 ),
               ),
             ],
           ),
-        ),
+        ),*/
       ),
     );
   }

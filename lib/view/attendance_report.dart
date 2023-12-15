@@ -128,6 +128,17 @@ class _AttendanceReportState extends State<AttendanceReport> {
                   fontWeight: FontWeight.w400)),
           actions: <Widget>[
             TextButton(
+              child: Text('No',
+                  style: AppStyles.customFontinika(context,
+                      color: ColorConstant.aicolor,
+                      fontSize: const AdaptiveTextSize()
+                          .getadaptiveTextSize(context, FontConstant.font15),
+                      fontWeight: FontWeight.w400)),
+              onPressed: () {
+                Navigator.of(context).pop(false);
+              },
+            ),
+            TextButton(
               child: Text('Yes',
                   style: AppStyles.customFontinika(context,
                       color: ColorConstant.aicolor,
@@ -156,17 +167,6 @@ class _AttendanceReportState extends State<AttendanceReport> {
                 if(studentsMoved){
                   showToast('Submitted successfully');
                 }
-              },
-            ),
-            TextButton(
-              child: Text('No',
-                  style: AppStyles.customFontinika(context,
-                      color: ColorConstant.aicolor,
-                      fontSize: const AdaptiveTextSize()
-                          .getadaptiveTextSize(context, FontConstant.font15),
-                      fontWeight: FontWeight.w400)),
-              onPressed: () {
-                Navigator.of(context).pop(false);
               },
             ),
           ],
@@ -334,13 +334,13 @@ class _AttendanceReportState extends State<AttendanceReport> {
                   fontSize: const AdaptiveTextSize()
                       .getadaptiveTextSize(context, 20),
                   fontWeight: FontWeight.w600),),
-            Text(
-              widget.className,
-              style: AppStyles.customFontinika(context,
-                  color: ColorConstant.whiteColorLight,
-                  fontSize: const AdaptiveTextSize()
-                      .getadaptiveTextSize(context, 20),
-                  fontWeight: FontWeight.w600),),
+            // Text(
+            //   widget.className,
+            //   style: AppStyles.customFontinika(context,
+            //       color: ColorConstant.whiteColorLight,
+            //       fontSize: const AdaptiveTextSize()
+            //           .getadaptiveTextSize(context, 20),
+            //       fontWeight: FontWeight.w600),),
           ],
         ),
         centerTitle: true,

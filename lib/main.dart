@@ -5,7 +5,11 @@ import 'package:mhi_ai_attendance/view/signin_screen.dart';
 import 'package:mhi_ai_attendance/view/splash_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    /*DevicePreview(
+                enabled: !kReleaseMode,
+                builder: (context) => MyApp(),),*/
+      const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -15,7 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'MHI Attendance',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,),

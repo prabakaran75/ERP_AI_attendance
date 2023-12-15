@@ -128,6 +128,17 @@ class _HomeScreenState extends State<HomeScreen> {
                   fontWeight: FontWeight.w400)),
           actions: <Widget>[
             TextButton(
+              child: Text('No',
+                  style: AppStyles.customFontinika(context,
+                      color: ColorConstant.aicolor,
+                      fontSize: const AdaptiveTextSize()
+                          .getadaptiveTextSize(context, FontConstant.font15),
+                      fontWeight: FontWeight.w400)),
+              onPressed: () {
+                Navigator.of(context).pop(false);
+              },
+            ),
+            TextButton(
               child: Text('Yes',
                   style: AppStyles.customFontinika(context,
                       color: ColorConstant.aicolor,
@@ -144,17 +155,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   context,
                   MaterialPageRoute(builder: (context) => const SignInScreen()),
                 );
-              },
-            ),
-            TextButton(
-              child: Text('No',
-                  style: AppStyles.customFontinika(context,
-                      color: ColorConstant.aicolor,
-                      fontSize: const AdaptiveTextSize()
-                          .getadaptiveTextSize(context, FontConstant.font15),
-                      fontWeight: FontWeight.w400)),
-              onPressed: () {
-                Navigator.of(context).pop(false);
               },
             ),
           ],
@@ -183,6 +183,17 @@ class _HomeScreenState extends State<HomeScreen> {
                   fontWeight: FontWeight.w400)),
           actions: <Widget>[
             TextButton(
+              child: Text('No',
+                  style: AppStyles.customFontinika(context,
+                      color: ColorConstant.aicolor,
+                      fontSize: const AdaptiveTextSize()
+                          .getadaptiveTextSize(context, FontConstant.font15),
+                      fontWeight: FontWeight.w400)),
+              onPressed: () {
+                Navigator.of(context).pop(false);
+              },
+            ),
+            TextButton(
               child: Text('Yes',
                   style: AppStyles.customFontinika(context,
                       color: ColorConstant.aicolor,
@@ -193,17 +204,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 // Exit the application
                 // Navigator.of(context).popUntil((route) => route.isFirst);
                 exit(0);
-              },
-            ),
-            TextButton(
-              child: Text('No',
-                  style: AppStyles.customFontinika(context,
-                      color: ColorConstant.aicolor,
-                      fontSize: const AdaptiveTextSize()
-                          .getadaptiveTextSize(context, FontConstant.font15),
-                      fontWeight: FontWeight.w400)),
-              onPressed: () {
-                Navigator.of(context).pop(false);
               },
             ),
           ],
@@ -236,14 +236,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 style: AppStyles.customFontinika(context,
                     color: ColorConstant.whiteColorLight,
                     fontSize: const AdaptiveTextSize()
-                        .getadaptiveTextSize(context, 27),
+                        .getadaptiveTextSize(context, 18),
                     fontWeight: FontWeight.w600),),
               Text(
-                "Asst.Professor",
+                "Professor",
                 style: AppStyles.customFontinika(context,
                     color: ColorConstant.whiteColorLight,
                     fontSize: const AdaptiveTextSize()
-                        .getadaptiveTextSize(context, 16),
+                        .getadaptiveTextSize(context, 14),
                     fontWeight: FontWeight.w600),),
             ],
           ),

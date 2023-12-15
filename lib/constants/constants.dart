@@ -32,6 +32,12 @@ class ColorConstant {
   static const Color whiteColor =  Color(0xffd9d2d2);
   static const Color whiteColor2 =  Color(0xffc0b6b6);
   static const Color whiteColor3 =  Color(0xffb6a6a6);
+  static const Color aicolor = Color(0xff4e3290);//#4e3290
+  static const Color aithemecolor = Color(0xff563d96);
+  static const Color aithemecolor1 = Color(0xFF8069B9);
+  static const Color aithemecolor2 = Color(0xFF9E83D2);
+  static const Color aithemecolor3 = Color(0xFFBFA8EC);
+  static const Color aicolor2 = Color(0xff0002A1);//#0002A1
 
   // Dark mode colors
   static const Color loginBgDark =  Color(0xFF0A1428);

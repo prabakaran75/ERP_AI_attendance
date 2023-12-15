@@ -70,8 +70,9 @@ class CustomDropDownFormField extends StatefulWidget {
   List<DropdownMenuItem<String>> items;
   dynamic value;
   Function(dynamic) onChanged;
+  Function(dynamic) validators;
   CustomDropDownFormField({required this.label, required this.items,
-    required this.value, required this.onChanged, super.key});
+    required this.value, required this.onChanged, required this.validators, super.key});
 
   @override
   State<CustomDropDownFormField> createState() => _CustomDropDownFormFieldState();
@@ -84,8 +85,8 @@ class _CustomDropDownFormFieldState extends State<CustomDropDownFormField> {
     return DropdownButtonFormField(
       // iconSize: 0.0,
       decoration: InputDecoration(
-        hintText: widget.label,
-        hintStyle: AppStyles.customFontinika(context,
+        labelText: widget.label,
+        labelStyle: AppStyles.customFontinika(context,
           color: ColorConstant.dullColor,
           fontSize: const AdaptiveTextSize()
               .getadaptiveTextSize(context, 13),),
@@ -103,16 +104,20 @@ class _CustomDropDownFormFieldState extends State<CustomDropDownFormField> {
         disabledBorder: OutlineInputBorder(
           borderSide: BorderSide(
               color: ColorConstant.dullColor),),
+        focusedErrorBorder: const OutlineInputBorder(
+          borderSide: BorderSide(
+              color: Colors.red),),
       ),
       items: widget.items,
       value:widget.value,
       onChanged: (v) => widget.onChanged(v),
-      validator: (value) {
+      validator: (v) => widget.validators(v),
+      /*validator: (value) {
         if (value == null) {
           return 'Please select some value';
         }
         return null;
-      },
+      },*/
     );
   }
 }

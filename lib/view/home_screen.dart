@@ -31,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
     'Class-4',
     'Class-5',
   ];
-  List<String> periodList = [
+  /*List<String> periodList = [
     '1st',
     '2nd',
     '3rd',
@@ -47,7 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
     'Sub4',
     'Sub5',
     'Sub6',
-  ];
+  ];*/
   String? scanBarcode;
   TextEditingController qrCtrl = TextEditingController();
   Future<void> checkAndRequestCameraPermission() async {
@@ -279,7 +279,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           fontSize: const AdaptiveTextSize()
                               .getadaptiveTextSize(context, 20),
                           fontWeight: FontWeight.w600),),*/
-                    SizedBox(height: height*0.01,),
+                    SizedBox(height: height*0.02,),
                     CustomDropDownFormField(
                       label: "Select class",
                       items: classList.map((item) =>
@@ -302,7 +302,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         }
                         return null;},
                     ),
-                    SizedBox(height: height*0.02,),
+                    /*SizedBox(height: height*0.02,),
                     CustomDropDownFormField(
                       label: "Select period",
                       items: periodList.map((item) =>
@@ -347,8 +347,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           return 'Please select a subject';
                         }
                         return null;},
-                    ),
-                    SizedBox(height: height*0.03,),
+                    ),*/
+                    SizedBox(height: height*0.07,),
                     Text(
                       "OR",
                       textAlign: TextAlign.center,
@@ -357,7 +357,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           fontSize: const AdaptiveTextSize()
                               .getadaptiveTextSize(context, 20),
                           fontWeight: FontWeight.w600),),
-                    SizedBox(height: height*0.01,),
+                    SizedBox(height: height*0.05,),
                     IconButton(
                         onPressed: (){
                           checkAndRequestCameraPermission();
@@ -365,6 +365,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         icon: Icon(Icons.qr_code_scanner,
                           size: height*0.25,
                         )),
+                    SizedBox(height: height*0.03,),
                     Container(
                       width: width*1.0,
                       height: height*0.07,

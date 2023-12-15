@@ -328,7 +328,7 @@ class _AttendanceReportState extends State<AttendanceReport> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Text(
-              "Attendance Confirm",
+              "Attendance Confirmation",
               style: AppStyles.customFontinika(context,
                   color: ColorConstant.whiteColorLight,
                   fontSize: const AdaptiveTextSize()

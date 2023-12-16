@@ -169,7 +169,7 @@ class _HomeScreenState extends State<HomeScreen> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Logout',
+          title: Text('Exit',
               style: AppStyles.customFontinika(context,
                   color: ColorConstant.darkColorLight,
                   fontSize: const AdaptiveTextSize()
@@ -245,6 +245,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     fontSize: const AdaptiveTextSize()
                         .getadaptiveTextSize(context, 14),
                     fontWeight: FontWeight.w600),),
+              // SizedBox(height: height*0.01,),
             ],
           ),
           centerTitle: true,
